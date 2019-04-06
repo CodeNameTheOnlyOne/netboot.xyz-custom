@@ -17,11 +17,13 @@ goto custom_exit
 
 
 :hirensdos
+imgfree
 kernel http://boot.netboot.xyz/memdisk iso raw
 initrd http://192.168.10.221:8080/Hirens10.iso
 boot 
 
 :hirensPE
+imgfree
 kernel http://boot.netboot.xyz/memdisk iso raw
 initrd http://192.168.10.221:8080/hbcdpex64.iso
 boot 
