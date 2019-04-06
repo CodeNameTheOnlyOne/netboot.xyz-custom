@@ -19,12 +19,12 @@ goto custom_exit
 :hirensdos
 kernel http://boot.netboot.xyz/memdisk iso raw
 initrd http://192.168.10.221:8080/Hirens10.iso
-boot || goto custom_exit
+boot 
 
 :hirensPE
 kernel http://boot.netboot.xyz/memdisk iso raw
 initrd http://192.168.10.221:8080/hbcdpex64.iso
-boot || goto custom_exit
+boot 
 
 :custom_exit
 chain utils.ipxe
