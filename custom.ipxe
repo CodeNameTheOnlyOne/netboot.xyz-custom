@@ -3,10 +3,28 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
-sleep 10
+
+clear custom_choice
+menu Advanced
+item --gap Additionals
+item hirensdos ${space} Hirens Bootcd10.1
+item hirensPE ${space} Hirens PE x64
+
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
+
+
+:hirensdos
+kernel ${memdis} raw iso
+initrd http://192.168.10.221:8080/Hirens10.iso
+boot || goto custom_exit
+
+:hirensPE
+kernel ${memdis} raw iso
+initrd http://192.168.10.221:8080/hbcdpex64.iso
+boot || goto custom_exit
 
 :custom_exit
 exit 0
